@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">IARUnlocks</string>
+
+    <!--  Install Reaction  -->
+    <string name="install_reaction_unknown">Whoa whoa whoa, I seem couldn\u0027t observe where you installed this unlock from..</string>
+</resources>

@@ -1,0 +1,14 @@
+package com.perkedel.iamrich.widgets
+
+import androidx.annotation.StringRes
+import androidx.compose.runtime.Composable
+import com.perkedel.iamrich.R.Res
+import com.perkedel.iamrich.R.*
+
+@Composable
+expect fun DownloadCarDetector()
+
+enum class InstallReaction(@StringRes val speech:Int = 0){
+    UNKNOWN(speech = Res.string.install_reaction_unknown),
+    GOOGLE_PLAY(1),
+}
