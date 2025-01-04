@@ -21,6 +21,8 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -78,6 +80,7 @@ fun App(
     val currentScreen:String = backStackEntry?.destination?.route ?: "main"
     val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
     val canNavigateBack:Boolean = navController.previousBackStackEntry != null
+    // TODO: is compact with WindowInfo
 //    val view: View = LocalView.current
     HTLauncherTheme(
         darkTheme = darkTheme,
@@ -147,6 +150,7 @@ fun App(
                                 modifier = Modifier
                                     .padding(innerPadding)
                                     .fillMaxSize()
+                                    .verticalScroll(rememberScrollState())
                                 ,
                                 horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center
@@ -186,6 +190,7 @@ fun App(
                                 modifier = Modifier
                                     .padding(innerPadding)
                                     .fillMaxSize()
+                                    .verticalScroll(rememberScrollState())
                                 ,
                                 horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center
@@ -197,11 +202,11 @@ fun App(
                                     modifier = Modifier.fillMaxWidth()
                                     )
                                 Spacer(
-                                    modifier = Modifier.padding(16.dp)
+                                    modifier = Modifier.padding(12.dp)
                                 )
                                 Text(
                                     text = stringResource(Res.string.iar_congratulations),
-                                    fontSize = 16.sp,
+                                    fontSize = 8.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.fillMaxWidth()
                                 )
