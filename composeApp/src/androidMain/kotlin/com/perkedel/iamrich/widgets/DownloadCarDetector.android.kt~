@@ -121,7 +121,7 @@ actual fun DownloadCarDetector() {
                     Row {
                         Box(
                             modifier = Modifier
-                                .size(50.dp)
+                                .size(48.dp)
                             ,
                             contentAlignment = Alignment.Center
                         ){

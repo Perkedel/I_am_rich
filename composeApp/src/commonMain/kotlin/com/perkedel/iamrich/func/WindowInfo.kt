@@ -35,3 +35,6 @@ data class WindowInfo(
 //        screenHeight = configuration.screenHeightDp.dp,
 //    )
 //}
+
+@Composable
+expect fun rememberWindowInfo() : WindowInfo

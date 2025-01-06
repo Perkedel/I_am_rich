@@ -75,6 +75,10 @@ kotlin {
 //            implementation(libs.androidx.navigation.compose)
             implementation(libs.jetbrains.compose.navigation)
 //            implementation(libs.androidx.annotation.jvm)
+            // https://github.com/coil-kt/coil
+            implementation(libs.coil.compose)
+//            implementation(libs.coil.network.okhttp)
+            implementation(libs.coil.svg)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

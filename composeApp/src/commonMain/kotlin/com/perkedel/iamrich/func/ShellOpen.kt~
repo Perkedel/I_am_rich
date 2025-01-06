@@ -1,0 +1,3 @@
+package com.perkedel.iamrich.func
+
+expect fun shellOpenUri(uri:String)

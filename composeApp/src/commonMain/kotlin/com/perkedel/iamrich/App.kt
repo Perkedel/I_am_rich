@@ -53,11 +53,16 @@ import androidx.navigation.compose.rememberNavController
 import com.perkedel.iamrich.R.Res
 import com.perkedel.iamrich.R.app_name
 import com.perkedel.iamrich.R.*
+import com.perkedel.iamrich.func.VersionString
+import com.perkedel.iamrich.func.WindowInfo
+import com.perkedel.iamrich.func.rememberWindowInfo
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import com.perkedel.iamrich.ui.theme.HTLauncherTheme
 import com.perkedel.iamrich.ui.theme.rememberColorScheme
 import com.perkedel.iamrich.widgets.DownloadCarDetector
+import com.perkedel.iamrich.widgets.IARInfo
+import com.perkedel.iamrich.widgets.IARManifesto
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 //import androidx.compose.ui.platform.LocalContext
@@ -75,6 +80,10 @@ fun App(
     // https://stackoverflow.com/a/29092698/9079640
     // https://youtu.be/WT9-4DXUqsM
     // https://github.com/philipplackner/CMP-Bookpedia/tree/master
+    // https://github.com/patzly/grocy-android-unlock This is the inspiration sauce!!!
+    // ft. help from Codeium lol!
+    val windowInfo:WindowInfo = rememberWindowInfo()
+    val isCompact = windowInfo.screenWidthInfo is WindowInfo.WindowType.Compact
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen:String = backStackEntry?.destination?.route ?: "main"
@@ -179,86 +188,73 @@ fun App(
                                     Spacer(
                                         modifier = Modifier.padding(8.dp)
                                     )
-                                    Text("Info")
+                                    Text(stringResource(Res.string.info_button))
                                 }
                             }
                         }
                         composable(
                             route = "info"
                         ) {
-                            Column(
-                                modifier = Modifier
-                                    .padding(innerPadding)
-                                    .fillMaxSize()
-                                    .verticalScroll(rememberScrollState())
-                                ,
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.Center
-                            ){
-                                Text(
-                                    text = stringResource(Res.string.iar_manifesto),
-                                    fontSize = 32.sp,
-                                    textAlign = TextAlign.Center,
-                                    modifier = Modifier.fillMaxWidth()
+                            if(isCompact){
+                                Column(
+                                    modifier = Modifier
+                                        .padding(innerPadding)
+                                        .fillMaxSize()
+                                        .verticalScroll(rememberScrollState())
+                                    ,
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.Center
+                                ){
+                                    IARManifesto(
+                                        modifier = Modifier,
                                     )
-                                Spacer(
-                                    modifier = Modifier.padding(12.dp)
-                                )
-                                Text(
-                                    text = stringResource(Res.string.iar_congratulations),
-                                    fontSize = 8.sp,
-                                    textAlign = TextAlign.Center,
-                                    modifier = Modifier.fillMaxWidth()
-                                )
-                                Spacer(
-                                    modifier = Modifier.padding(32.dp)
-                                )
-                                DownloadCarDetector()
-                                Spacer(
-                                    modifier = Modifier.padding(32.dp)
-                                )
-                                FlowRow(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.Center,
-                                ) {
-                                    // https://developer.android.com/develop/ui/compose/layouts/flow
-                                    Button(
-                                        onClick = {
+                                    IARInfo(
+                                        modifier = Modifier,
+                                        onNavBack = {
                                             navController.navigateUp()
                                         },
-                                    ){
-                                        Icon(Icons.AutoMirrored.Default.ArrowBack,"")
-                                        Spacer(
-                                            modifier = Modifier.padding(8.dp)
-                                        )
-                                        Text(stringResource(Res.string.back_button))
-                                    }
-                                    Button(
-                                        onClick = {
-                                            // TODO: open Github
-                                        },
-                                    ){
-                                        Icon(Icons.Default.Code,"")
-                                        Spacer(
-                                            modifier = Modifier.padding(8.dp)
-                                        )
-                                        Text(stringResource(Res.string.source_code_button))
-                                    }
-                                    Button(
-                                        onClick = {
-
-                                        },
-                                    ){
-                                        Icon(Icons.Default.Code,"")
-                                        Spacer(
-                                            modifier = Modifier.padding(8.dp)
-                                        )
-                                        Text(stringResource(Res.string.source_code_button))
-                                    }
-
+                                        versionString = VersionString(),
+                                    )
                                 }
-                                Text("Ver ${stringResource(Res.string.version)}")
+                            } else {
+                                Row(
+                                    modifier = Modifier.padding(innerPadding).fillMaxWidth()
+                                ) {
+                                    Column(
+                                        modifier = Modifier
+                                            .weight(1f)
+                                            .verticalScroll(rememberScrollState())
+                                        ,
+                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                        verticalArrangement = Arrangement.Center
+                                    ) {
+                                        IARManifesto(
+                                            modifier = Modifier,
+                                        )
+                                    }
+                                    Spacer(
+                                        modifier = Modifier.padding(2.dp),
+                                    )
+                                    Column(
+                                        modifier = Modifier
+                                            .weight(1f)
+                                            .verticalScroll(rememberScrollState())
+                                        ,
+                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                        verticalArrangement = Arrangement.Center
+                                    ) {
+                                        IARInfo(
+                                            modifier = Modifier,
+                                            onNavBack = {
+                                                navController.navigateUp()
+                                            },
+//                                            versionString = "${BuildConfig.VERSION_NAME}"
+                                            versionString = VersionString(),
+                                        )
+                                    }
+                                }
                             }
+
                         }
                     }
                 }
