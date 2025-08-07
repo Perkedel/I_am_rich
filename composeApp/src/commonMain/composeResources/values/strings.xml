@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">IARUnlocks</string>
-    <string name="version" translatable="false">2025.02.0</string>
+    <string name="version" translatable="false">2025.08.0</string>
     <string name="app_name_translatable" translatable="true">I am rich</string>
     <string name="info_button">Info</string>
     <string name="back_button">Back</string>
@@ -30,4 +30,7 @@
     <string name="nah_who_cares_fdroid">It's fine.., although we are yes ran out of money so.., other ways of help is appreciated.</string>
     <string name="nah_who_cares_manually">But seriously, we are yes ran out of money so.., other ways of help is appreciated.</string>
     <string name="nah_who_cares_google_play">I mean seriously, we actually ran out of money so we'll take it (pls don\u0027t refund tho coz we mean it). And uh.. you can redownload the manually APK from our Source code and yep, it still works just so you know.. yeah.\nAlso uhh.. root cheat (set install source to market) or not uh.. I really ran out of money. Pls give me money thancc.</string>
+
+    <!--  Stop autoclosing accounts  -->
+    <string name="stop_autoclosing_accounts">Stop autoclosing accounts</string>
 </resources>

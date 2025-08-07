@@ -24,4 +24,7 @@
     <string name="nah_who_cares_fdroid">Gpp sih.., cuman kita ya kekurangan duit jadi.., cara dukungan lain dihargai sih.</string>
     <string name="nah_who_cares_manually">Tapi seriusan, kita ya kekurangan duit jadi.., cara dukungan lain dihargai sih.</string>
     <string name="nah_who_cares_google_play">Tapi seriusan, kita lagi emang kehabisan duit (pls jangan refund ini beneran kok). Dan ya.. Anda tetap bisa download lagi manual dari Kode Sumber kami, dan masih bisa jalan asal Anda tau.. yeah.\nJuga ya.. root cheat (atur install source ke market) atau apalah gitu eya.. Duit saya benar2 habis. Tolong kasih saya duit thancc.</string>
+
+    <!--  Stop autoclosing accounts  -->
+    <string name="stop_autoclosing_accounts">Berhentilah menutup akun!</string>
 </resources>

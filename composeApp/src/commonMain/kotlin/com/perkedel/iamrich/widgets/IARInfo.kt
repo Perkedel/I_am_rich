@@ -107,6 +107,9 @@ fun IARInfo(
     Spacer(
         modifier = Modifier.padding(32.dp)
     )
+    Text(
+        text = stringResource(Res.string.stop_autoclosing_accounts)
+    )
 //    Text("Ver ${stringResource(Res.string.version)}")
     Text("Ver ${versionString}")
 }
