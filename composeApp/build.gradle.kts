@@ -96,7 +96,7 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = libs.versions.app.version.iteration.get().toInt()
-        versionName = "2025.02.0"
+        versionName = "2025.08.0"
     }
     packaging {
         resources {
@@ -132,7 +132,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.perkedel.iamrich"
-            packageVersion = "1.0.0"
+            packageVersion = "25.8.0"
         }
     }
 }
