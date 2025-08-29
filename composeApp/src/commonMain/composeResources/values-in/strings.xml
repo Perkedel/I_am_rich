@@ -27,4 +27,6 @@
 
     <!--  Stop autoclosing accounts  -->
     <string name="stop_autoclosing_accounts">Berhentilah menutup akun!</string>
+
+    <!--  TODO: translate Anti-Paywallism to Indonesia  -->
 </resources>

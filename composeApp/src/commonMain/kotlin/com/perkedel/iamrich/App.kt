@@ -10,6 +10,7 @@ import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -63,6 +64,8 @@ import com.perkedel.iamrich.ui.theme.rememberColorScheme
 import com.perkedel.iamrich.widgets.DownloadCarDetector
 import com.perkedel.iamrich.widgets.IARInfo
 import com.perkedel.iamrich.widgets.IARManifesto
+import com.perkedel.iamrich.widgets.IARReportPaywallEntryCard
+import com.perkedel.iamrich.widgets.IARReportPaywallForm
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 //import androidx.compose.ui.platform.LocalContext
@@ -213,8 +216,12 @@ fun App(
                                         onNavBack = {
                                             navController.navigateUp()
                                         },
+                                        onOpenReportPaywall = {
+                                            navController.navigate("anti_paywallism")
+                                        },
                                         versionString = VersionString(),
                                     )
+
                                 }
                             } else {
                                 Row(
@@ -248,11 +255,42 @@ fun App(
                                             onNavBack = {
                                                 navController.navigateUp()
                                             },
+                                            onOpenReportPaywall = {
+                                                navController.navigate("anti_paywallism")
+                                            },
 //                                            versionString = "${BuildConfig.VERSION_NAME}"
                                             versionString = VersionString(),
                                         )
                                     }
                                 }
+                            }
+
+                        }
+                        composable(
+                            route = "anti_paywallism"
+                        ) {
+                            // Unfortunately, our source of inspiration of this whole I am Rich
+                            /*
+                            endeavour start partializing his apps.
+                            Idk man. I just thought we're cool guys. I can wait like his other apps.
+                            But no. FUTO e.g. does not let devs do that. Yes, apps are mostly paid,
+                            but if you.. "sparsdated" it, it's just identical. No annoyance.
+                            You're there to support FUTO and their endeavours.
+                            Here, we're going to punish our developers who use our binding contract
+                            between me, and you guys if you dare paywall or even just partialize
+                            just any of the features. I do not tolerate any of this.
+                             */
+                            Box(
+                                modifier = Modifier
+                                    .padding(innerPadding)
+                            )
+                            {
+                                IARReportPaywallForm(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                    ,
+                                    isCompact = isCompact,
+                                )
                             }
 
                         }

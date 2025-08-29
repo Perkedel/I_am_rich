@@ -14,7 +14,7 @@
     <!--  Manifesto  -->
     <string name="iar_manifesto">I am rich\nI am very health \u0026 successful\nI deserve it\nI am glad</string>
     <string name="iar_congratulations">Thank you for your purchase. You have unlocked all premium features for <b>ALL OF PERKEDEL apps</b>. Congratulations!\nPlease keep this software installed to keep your premium features</string>
-    <string name="iar_disclaimer">Disklaimer:</string>
+    <string name="iar_disclaimer">Disclaimer:</string>
     <string name="iar_disclaimer_long">This piece of software was made for the purpose of parody. Any resemblance of software products: real, fake, or defunct; are purely coincidental and made up.\n\nCreation of this product subjects for the act of satire, hence does not condone nor express any disparagement, insult, nor callouts whatsoever (even if some strings may found to have said so).\n\n</string>
 
     <!--  Install Reaction  -->
@@ -33,4 +33,38 @@
 
     <!--  Stop autoclosing accounts  -->
     <string name="stop_autoclosing_accounts">Stop autoclosing accounts</string>
+
+    <!--  Anti-paywallism  -->
+    <string name="anti_paywallism_Button">Found Paywallism or Partialism in Perkedel apps?\nREPORT IT! BUZZERS WILL BE PUNISHED.</string>
+    <string name="anti_paywallism_clickHere">More info (opens locally here)</string>
+    <string name="anti_paywallism_Title">Anti-Paywallism</string>
+    <string name="anti_paywallism_Description">At Perkedel, we make apps for Gratis, Open Source, &amp; FULL VERSION. We do not ask anything in exchange, except to let everyone know, we have this cool stuffs.\n
+As the result, we do not have revenue to support our life support systems.
+In fact, we also are scrounging like maniacs on streets, begging for money just to let us live for at least 1 nanosecond.
+Despite of all this, we are required to keep being sane, and always give for the people. Money can only be obtained under voluntary &amp; a goodwill of our customers.
+
+    These days, lots of Open Source apps, of course asks for donations. However also, that includes apps that no longer just ask donations, but now, EXCHANGE.
+Exchange, that turns it back to basic: Wani Piro (it costs coins).
+While this does therefore restore their life support functionality significantly, it sacrifices the comfort for all people. Rich people won't feel nothing, but the less than those, will. Including us, even say we would be rich later (for some reasons btw).
+
+Today, Perkedel has been running the campaign that will catch those abusers that are &amp; were doing contracts with us.
+We will not tolerate any amount of abuse done within our community, both by external, and internal, including the technique this `I am rich` is using such as Installation source of this Unlocker APK (Google Play? Or pirated?).
+If you find any incident involving publication of Perkedel Technologies such as:
+- Main app is paywalled
+- Main app is limited in feature (even just a little bit) and you must use Unlocker key to unlock those. Not to be confused with FUTO's Buy function, since the License is just to support &amp; access to customer service, nothing walled otherwise.
+- You've been asked to pay greasing fee (Uang Pelicin) just to make the service work
+- You've been inappropriately asked to pay any sum of money / fee at a supposedly already funded event such as in Job Hiring.
+... Please immediately report to us using these contact cards below. Do not be afraid. Bad Whistleblowers &amp; Buzzers will be punished on the spot, and we will provide protection as must as we can.:
+    </string>
+    <string name="anti_paywallism_reportButton">Report Now, by going to:</string>
+    <string name="anti_paywallism_reportContact">and/or notify Kaorfa at:</string>
+    <string name="anti_paywallism_reportURL" translatable="false">https://github.com/Perkedel/I_am_rich/issues/new/choose</string>
+    <string name="anti_paywallism_reportEmail" translatable="false">@JOELwindows7</string>
+    <string name="anti_paywallism_reportContact_post">You know where he is.</string>
+    <string name="anti_paywallism_reportContact_template">Use this template:</string>
+    <string name="anti_paywallism_reportTemplate">(SUBJECT: Paywallism in Perkedel, PRODUCT_TITLE)
+Product name: ___________
+Sauce URL: ___________
+Describe what was paywalled in detail: ____________
+    </string>
 </resources>

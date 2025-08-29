@@ -29,6 +29,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun IARInfo(
     modifier: Modifier = Modifier,
     onNavBack:()->Unit = {},
+    onOpenReportPaywall:()->Unit = {},
     versionString:String = stringResource(Res.string.version),
 ){
     val localUriHandler = LocalUriHandler.current
@@ -58,7 +59,7 @@ fun IARInfo(
         }
         Button(
             onClick = {
-                // TODO: open Github
+                // DONE: open Github
                 // https://appkickstarter.com/blog/open-url-compose-multiplatform YES WORK
                 // https://www.repeato.app/opening-a-url-in-androids-web-browser-from-your-application/
                 // https://stackoverflow.com/questions/3004515/sending-an-intent-to-browser-to-open-specific-url
@@ -95,6 +96,14 @@ fun IARInfo(
         }
 
     }
+    Spacer(
+        modifier = Modifier.padding(32.dp)
+    )
+    IARReportPaywallEntryCard(
+        modifier = Modifier.fillMaxWidth()
+        ,
+        onClick = onOpenReportPaywall,
+    )
     Spacer(
         modifier = Modifier.padding(32.dp)
     )
